@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wolf3d.c                                           :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 21:12:04 by enunes            #+#    #+#             */
-/*   Updated: 2017/10/31 21:14:44 by enunes           ###   ########.fr       */
+/*   Updated: 2017/11/11 13:32:03 by enunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	draw_sky(t_wolf *t)
 		while (t->y_text < WINY / 2)
 		{
 			ft_memcpy(t->img_ptr + 4 * WINX * t->y_text + t->x_text * 4,
-					&t->tex[4].data[t->y_text % 512 * t->tex[4].sizeline +
-					t->x_text % 512 * t->tex[4].bpp / 8], sizeof(int));
+					&t->tex[5].data[t->y_text % 512 * t->tex[5].sizeline +
+					t->x_text % 512 * t->tex[5].bpp / 8], sizeof(int));
 			t->y_text++;
 		}
 		t->x_text++;
