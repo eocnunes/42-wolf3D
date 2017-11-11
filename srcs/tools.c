@@ -30,16 +30,14 @@ void	error(char *message)
 void	help_text(t_wolf *t)
 {
 	mlx_string_put(t->mlx, t->win, 10, 10,
-			0xf2f2f2, "Press W A S D or the arrow keys to move.");
-	mlx_string_put(t->mlx, t->win, 10, 30, 0xf2f2f2, "Press SHIFT to sprint.");
+			0xf2f2f2, "Press W A S D or the arrow keys to move");
+	mlx_string_put(t->mlx, t->win, 10, 30, 0xf2f2f2, "Press SHIFT to sprint");
 	mlx_string_put(t->mlx, t->win, 10, 50,
-			0xf2f2f2, "Press DEL to reset the level.");
+			0xf2f2f2, "Press T to show or hide textures");
 	mlx_string_put(t->mlx, t->win, 10, 70,
-			0xf2f2f2, "Press T to show or hide textures.");
+			0xf2f2f2, "Press H to show or hide this help");
 	mlx_string_put(t->mlx, t->win, 10, 90,
-			0xf2f2f2, "Press H to show or hide this help.");
-	mlx_string_put(t->mlx, t->win, 10, 110,
-			0xf2f2f2, "Press ESC to quit.");
+			0xf2f2f2, "Press ESC to quit");
 }
 
 int	  line_len(char *str)

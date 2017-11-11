@@ -35,7 +35,7 @@ int       main(int ac, char **av)
   title = ft_strjoin("Wolf3D: ", t->map_name);
   t->mlx = mlx_init();
   t->win = mlx_new_window(t->mlx, WINX, WINY, title);
-  system("afplay Wolfenstein_3D-MenuMusic.mp3 &");
+  system("afplay OriginalSoundtrack_Wolfenstein3D.mp3 &");
   mlx_hook(t->win, 17, 0L, ft_close, t);
 	mlx_hook(t->win, 2, (1L << 0), key_press, t);
 	mlx_hook(t->win, 3, (1L << 1), key_release, t);

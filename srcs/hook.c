@@ -60,7 +60,7 @@ int		key_press(int keycode, t_wolf *t)
 		t->ms = 0.1;
 	else if (keycode == 53)
 		ft_close();
-	else if (keycode == 117)
+	else if (keycode == 51)
 		wolf3d_init(t);
 	else
 		key_press2(keycode, t);

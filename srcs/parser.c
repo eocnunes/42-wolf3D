@@ -122,17 +122,9 @@ int		parser(t_wolf *t, char **av)
 	buff = ft_strnew(65536);
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0 || (read(fd, buff, 65536)) < 1)
-	{
     error(ERR_MAP);
-    ft_putstr("parser1line");
-		return (0);
-	}
 	if (!(check_map(buff, t)))
-	{
     error(ERR_MAP);
-		ft_putstr("parser2line");
-		return (0);
-	}
 	while (buff[i] != '\0' && buff[i] != '\n')
 	{
 		if (buff[i] == ' ')
@@ -147,10 +139,6 @@ int		parser(t_wolf *t, char **av)
 	if (!(parse_map(t, av)))
 		return (0);
 	if (!check_side(t))
-	{
-    //error(ERR_MAP);
-    ft_putstr("parser3line");
-		return (0);
-	}
+    error(ERR_MAP);
 	return (1);
 }
