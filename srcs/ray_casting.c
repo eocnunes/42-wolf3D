@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wolf3d.c                                           :+:      :+:    :+:   */
+/*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 21:12:04 by enunes            #+#    #+#             */
-/*   Updated: 2017/10/31 21:14:44 by enunes           ###   ########.fr       */
+/*   Updated: 2017/11/12 16:39:05 by enunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,20 @@ void	dda_init(t_wolf *t)
 
 void	floor_and_ceiling(t_wolf *t, int x)
 {
-if (t->texture == 0){
-	if (t->start > 0)
+	if (t->texture == 0)
 	{
-		t->color = 0x848b8e;
-		t->y = -1;
-		if (x < WINX && t->y < WINY)
-			while (++t->y < t->start)
-			{
-				ft_memcpy(t->img_ptr + 4 * WINX * t->y + x * 4,
-						&t->color, sizeof(int));
-			}
+		if (t->start > 0)
+		{
+			t->color = 0x848b8e;
+			t->y = -1;
+			if (x < WINX && t->y < WINY)
+				while (++t->y < t->start)
+				{
+					ft_memcpy(t->img_ptr + 4 * WINX * t->y + x * 4,
+							&t->color, sizeof(int));
+				}
+		}
 	}
-}
 	if (t->end > 0)
 	{
 		t->color = 0x333333;

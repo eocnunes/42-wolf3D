@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wolf3d.c                                           :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 21:26:58 by enunes            #+#    #+#             */
-/*   Updated: 2017/10/31 21:14:44 by enunes           ###   ########.fr       */
+/*   Updated: 2017/11/12 16:37:19 by enunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,9 +122,8 @@ int		parser(t_wolf *t, char **av)
 	buff = ft_strnew(65536);
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0 || (read(fd, buff, 65536)) < 1)
-    error(ERR_MAP);
-	if (!(check_map(buff, t)))
-    error(ERR_MAP);
+		error(ERR_MAP);
+	(!(check_map(buff, t))) ? error(ERR_MAP) : (0);
 	while (buff[i] != '\0' && buff[i] != '\n')
 	{
 		if (buff[i] == ' ')
@@ -135,10 +134,9 @@ int		parser(t_wolf *t, char **av)
 	t->map_name = av[1];
 	close(fd);
 	if (!(t->map = (int **)malloc(sizeof(int *) * t->map_length)))
-    return (0);
+		return (0);
 	if (!(parse_map(t, av)))
 		return (0);
-	if (!check_side(t))
-    error(ERR_MAP);
+	(!check_side(t)) ? error(ERR_MAP) : (0);
 	return (1);
 }
