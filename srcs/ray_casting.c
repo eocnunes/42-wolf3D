@@ -6,7 +6,7 @@
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 21:12:04 by enunes            #+#    #+#             */
-/*   Updated: 2017/11/12 16:39:05 by enunes           ###   ########.fr       */
+/*   Updated: 2017/11/12 18:30:52 by enunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,11 @@ void	floor_and_ceiling(t_wolf *t, int x)
 		t->color = 0x333333;
 		t->y = t->end - 1;
 		if (x < WINX && t->y < WINY)
+		{
 			while (++t->y < WINY)
 				ft_memcpy(t->img_ptr + 4 * WINX * t->y + x * 4,
 						&t->color, sizeof(int));
+		}
 	}
 }
 
